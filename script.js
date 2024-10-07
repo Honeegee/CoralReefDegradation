@@ -1,41 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const causes = [
-        "Climate change and ocean acidification",
-        "Overfishing and destructive fishing practices",
-        "Pollution and sedimentation",
-        "Coastal development",
-        "Invasive species",
-        "Disease outbreaks"
-    ];
 
-    // Populate the causes list
-    const causesList = document.getElementById('causes-list');
-    causes.forEach(cause => {
-        const li = document.createElement('li');
-        li.classList.add('list-group-item');
-        li.textContent = cause;
-        causesList.appendChild(li);
-    });
-
-    // Handle all "Show More" buttons to open new pages
-    document.querySelectorAll('.show-more').forEach(button => {
-        button.addEventListener('click', () => {
-            const sectionId = button.getAttribute('data-target');
-            
-            // Open a new page for each "Show More" button
-            if (sectionId === 'intro-more') {
-                window.location.href = 'introduction.html';  // Redirect to a new page for Introduction
-            } else if (sectionId === 'causes-more') {
-                window.location.href = 'causes.html';  // Redirect to a new page for Causes
-            } else if (sectionId === 'impact-info') {
-                window.location.href = 'impact.html';  // Redirect to a new page for Impact
-            } else if (sectionId === 'conservation-more') {
-                window.location.href = 'conservation.html';  // Redirect to a new page for Conservation
-            }
-        });
-    });
-
-    // Smooth scrolling for menu navigation (existing behavior)
+    // Smooth scrolling for menu navigation
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -45,73 +9,107 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Dark mode toggle (existing behavior)
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
-    const body = document.body;
-
-    darkModeToggle.addEventListener('click', () => {
-        body.classList.toggle('dark-mode');
-        body.classList.toggle('light-mode');
-        
-        // Update icon
-        const icon = darkModeToggle.querySelector('i');
-        if (body.classList.contains('dark-mode')) {
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
-        } else {
-            icon.classList.remove('fa-sun');
-            icon.classList.add('fa-moon');
-        }
+    document.addEventListener('DOMContentLoaded', function() {
+        const UnderwaterAnimation = {
+            fishImages: [
+                'fish1.png',
+                'fish2.png',
+                'fish3.png'
+            ],
+            
+            init() {
+                this.container = document.createElement('div');
+                this.container.id = 'underwater-animation-container';
+                this.container.style.cssText = `
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    pointer-events: none;
+                    z-index: 1;
+                `;
+                document.body.appendChild(this.container);
+                
+                this.updateContainerSize();
+                window.addEventListener('resize', () => this.updateContainerSize());
+                window.addEventListener('scroll', () => this.updateElementPositions());
+                
+                this.startAnimations();
+            },
+    
+            updateContainerSize() {
+                const docHeight = Math.max(
+                    document.body.scrollHeight, document.documentElement.scrollHeight,
+                    document.body.offsetHeight, document.documentElement.offsetHeight,
+                    document.body.clientHeight, document.documentElement.clientHeight
+                );
+                this.container.style.height = `${docHeight}px`;
+            },
+    
+            updateElementPositions() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const viewportHeight = window.innerHeight;
+                
+                this.container.querySelectorAll('.bubble, .fish').forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.bottom < 0 || rect.top > viewportHeight) {
+                        const newY = Math.random() * this.container.offsetHeight;
+                        el.style.transform = `translateY(${newY}px)`;
+                    }
+                });
+            },
+    
+            startAnimations() {
+                for (let i = 0; i < 50; i++) {
+                    this.createBubble();
+                }
+                for (let i = 0; i < 10; i++) {
+                    this.createFish();
+                }
+    
+                setInterval(() => this.createBubble(), 2000);
+                setInterval(() => this.createFish(), 5000);
+            },
+    
+            createBubble() {
+                const bubble = document.createElement('div');
+                const size = Math.random() * 20 + 5;
+                const startX = Math.random() * this.container.offsetWidth;
+                const startY = Math.random() * this.container.offsetHeight;
+    
+                bubble.className = 'bubble';
+                bubble.style.cssText = `
+                    left: ${startX}px;
+                    top: ${startY}px;
+                    width: ${size}px;
+                    height: ${size}px;
+                `;
+    
+                this.container.appendChild(bubble);
+            },
+    
+            createFish() {
+                const fish = document.createElement('div');
+                const size = Math.random() * 60 + 40;
+                const yPos = Math.random() * this.container.offsetHeight;
+                const isLeftToRight = Math.random() > 0.5;
+                const imageIndex = Math.floor(Math.random() * this.fishImages.length);
+    
+                fish.className = 'fish';
+                fish.style.cssText = `
+                    top: ${yPos}px;
+                    width: ${size}px;
+                    height: ${size / 2}px;
+                    background-image: url('${this.fishImages[imageIndex]}');
+                    --direction: ${isLeftToRight ? 1 : -1};
+                    --start: ${isLeftToRight ? '-100px' : '100%'};
+                    --end: ${isLeftToRight ? '100%' : '-100px'};
+                `;
+    
+                this.container.appendChild(fish);
+            }
+        };
+    
+        UnderwaterAnimation.init();
     });
-
- 
-
-    // Underwater animation
-    function createUnderwater() {
-        createBubble();
-        createFish();
-    }
-
-    function createBubble() {
-        const bubble = document.createElement('div');
-        bubble.classList.add('bubble');
-        
-        const size = Math.random() * 40 + 10;
-        bubble.style.width = `${size}px`;
-        bubble.style.height = `${size}px`;
-        
-        bubble.style.left = `${Math.random() * 100}vw`;
-        bubble.style.animationDuration = `${Math.random() * 5 + 3}s`;
-        
-        document.body.appendChild(bubble);
-        
-        setTimeout(() => {
-            bubble.remove();
-        }, 8000);
-    }
-
-    function createFish() {
-        const fish = document.createElement('div');
-        fish.classList.add('fish');
-        
-        const size = Math.random() * 30 + 20;
-        fish.style.width = `${size}px`;
-        fish.style.height = `${size / 2}px`;
-        
-        fish.style.top = `${Math.random() * 80 + 10}vh`;
-        fish.style.animationDuration = `${Math.random() * 10 + 10}s`;
-        
-        // Create a simple fish shape using CSS
-        fish.style.backgroundColor = 'transparent';
-        fish.style.borderRadius = '50%';
-        fish.style.boxShadow = `${size/4}px 0 0 ${size/8}px var(--accent-color)`;
-        
-        document.body.appendChild(fish);
-        
-        setTimeout(() => {
-            fish.remove();
-        }, 20000);
-    }
-
-    setInterval(createUnderwater, 1000);
-});

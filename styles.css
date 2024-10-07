@@ -23,7 +23,6 @@ body {
 body.dark-mode {
     background-color: var(--background-dark);
     color: var(--text-dark);
-    
 }
 
 .container {
@@ -79,15 +78,12 @@ main {
     font-weight: 700;
 }
 
-
 .section-title {
     font-family: 'Playfair Display', serif; 
     font-weight: 700;
     color: var(--primary-color);
     font-size: 1.5em;
 }
-
-
 
 .btn-primary {
     background-color: var(--primary-color);
@@ -103,62 +99,55 @@ main {
     font-size: 1.2rem;
 }
 
-.bubble {
-    position: fixed;
-    bottom: -20px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
+#underwater-animation-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     pointer-events: none;
-    z-index: -1;
-    animation: bubble 8s infinite;
+    z-index: 1;
+    overflow: hidden;
 }
 
-@keyframes bubble {
-    0% {
-        transform: translateY(0) scale(1);
-        opacity: 0;
-    }
-    50% {
-        opacity: 0.5;
-    }
-    100% {
-        transform: translateY(-100vh) scale(2);
-        opacity: 0;
-    }
+.bubble {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: bubbleRise 20s linear infinite;
 }
 
 .fish {
     position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
     pointer-events: none;
-    z-index: -1;
-    animation: swim 20s linear infinite;
+    animation: fishSwim 30s linear infinite;
 }
 
-@keyframes swim {
+@keyframes bubbleRise {
     0% {
-        transform: translateX(-100%) translateY(0);
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
     }
     100% {
-        transform: translateX(100vw) translateY(50px);
+        transform: translate(0, -100vh);
+        opacity: 0;
     }
 }
 
-/* Dark mode styles */
-body.dark-mode .card {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: var(--text-dark);
-}
-
-body.dark-mode .card-title {
-    color: var(--text-dark);
-}
-
-body.dark-mode .navbar {
-    background-color: var(--background-dark); 
-}
-
-@media (max-width: 768px) {
-    .navbar-nav {
-        margin-top: 1rem;
+@keyframes fishSwim {
+    0% {
+        transform: translateX(var(--start)) scaleX(var(--direction));
+    }
+    100% {
+        transform: translateX(var(--end)) scaleX(var(--direction));
     }
 }
