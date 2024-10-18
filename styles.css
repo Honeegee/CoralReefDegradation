@@ -7,6 +7,7 @@
     --background-dark: #2b0000;     /* Blackish red */
     --text-light: #333333;          /* Dark gray for text */
     --text-dark: #ffffff;           /* White for dark mode text */
+    --ocean-blue: #0da734;
 }
 
 body {
@@ -150,4 +151,154 @@ main {
     100% {
         transform: translateX(var(--end)) scaleX(var(--direction));
     }
+}
+
+
+
+
+.modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    background-color: var(--background-light);
+}
+
+.modal-header {
+    background-color: var(--primary-color);
+    color: var(--text-dark);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 20px 30px;
+}
+
+.modal-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+}
+
+.modal-body {
+    padding: 30px;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--text-dark);
+    color: var(--text-light);
+}
+
+.nav-tabs {
+    border-bottom: 2px solid var(--ocean-blue);
+}
+
+.nav-tabs .nav-link {
+    color: var(--text-light);
+    border: none;
+    padding: 10px 20px;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--primary-color);
+    background-color: var(--background-light);
+    border-radius: 5px 5px 0 0;
+}
+
+.tab-content {
+    padding-top: 20px;
+}
+
+.info-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.info-card h6 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.action-steps {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.action-steps li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.action-steps li i {
+    color:green;
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 10px 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Animation for tab content */
+.tab-pane {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+
+.custom-modal .fas {
+    color: green; /* Change to your preferred shade of green */
+}
+
+
+.credit {
+    color: #007BFF; /* Change this to your desired color */
+    font-weight: bold;
+}
+
+
+.custom-list {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove default padding */
+}
+
+.custom-list li {
+    margin-left: 1.5em; /* Optional: Indent list items for better appearance */
 }
