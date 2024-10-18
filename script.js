@@ -115,4 +115,17 @@
     });
 
 
- 
+    document.getElementById('pledgeForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Here you would typically send the form data to your server
+        console.log('Form submitted');
+        
+        // Close the pledge modal
+        var pledgeModal = bootstrap.Modal.getInstance(document.getElementById('pledgeModal'));
+        pledgeModal.hide();
+        
+        // Show the thank you modal
+        var thankYouModal = new bootstrap.Modal(document.getElementById('thankYouModal'));
+        thankYouModal.show();
+    });
+   
