@@ -83,7 +83,7 @@ main {
     font-family: 'Playfair Display', serif; 
     font-weight: 700;
     color: var(--primary-color);
-    font-size: 1.5em;
+    font-size: 2.5rem;
 }
 
 .btn-primary {
@@ -343,3 +343,32 @@ main {
     margin: 0 auto;
 }
 
+
+.action-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.fact-box {
+    background-color: #f8f9fa;
+    border-left: 4px solid #17a2b8;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+/* For smaller screens (tablets, mobile devices) */
+@media (max-width: 768px) {
+    .bg-image {
+        background-size: contain; /* Ensures the image is fully visible */
+        height: 50vh; /* Reduce the height for smaller screens */
+        background-position: top; /* Adjust position for better visibility */
+    }
+}
+
+/* For very small devices (mobile phones) */
+@media (max-width: 480px) {
+    .bg-image {
+        height: 40vh; /* Further reduce height for mobile phones */
+        background-size: cover;
+    }
+}
