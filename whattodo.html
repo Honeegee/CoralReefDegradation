@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coral Reef Degradation</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-mode">
+
+    <div class="bubble"></div>
+    <div class="fish" id="fish1"></div>
+    <div class="fish" id="fish2"></div>
+    <div class="fish" id="fish3"></div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #2b0000;">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <h1 class="display-6 mb-0">Coral Reef Degradation</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="causes.html">Causes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="impact.html">Impact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="conservation.html">Conservation</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="whattodo.html">What to Do?</a></li>
+                        <li class="nav-item"><a class="nav-link" href="what-now.html">What Now?</a></li> 
+                        <li class="nav-item"><a class="nav-link" href="insights.html">Insights</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+  <!-- Main Content -->
+
+  <main class="container py-5" style="margin-top: 80px;">
+    <section id="intro" class="mb-4" data-aos="fade-up">
+        <div class="card-body text-center"> 
+            <h1 class="card-title text-blue">What Can You Do?</h1> 
+            <p class="card-text">
+                Coral reefs are in danger, but you can help! Here are some actions you can take to contribute to their conservation:
+            </p>
+        </div>
+    </section>
+
+
+
+    <section id="actions" class="row">
+        <div class="col-md-6 mb-4" data-aos="fade-right" data-aos-delay="100">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title">Everyday Actions</h3>
+                    <div class="action-item">
+                        <span class="action-icon">🌿</span>
+                        <p>Reduce your carbon footprint by using energy-efficient appliances and transportation.</p>
+                    </div>
+                    <div class="action-item">
+                        <span class="action-icon">🚯</span>
+                        <p>Properly dispose of waste and participate in beach clean-ups.</p>
+                    </div>
+                    <div class="action-item">
+                        <span class="action-icon">🧴</span>
+                        <p>Use reef-safe sunscreen to protect coral from harmful chemicals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4" data-aos="fade-left" data-aos-delay="200">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title">Get Involved</h3>
+                    <div class="action-item">
+                        <span class="action-icon">🎓</span>
+                        <p>Educate yourself and others about the importance of coral reefs.</p>
+                    </div>
+                    <div class="action-item">
+                        <span class="action-icon">💰</span>
+                        <p>Support organizations working on coral reef conservation.</p>
+                    </div>
+                    <div class="action-item">
+                        <span class="action-icon">🗳️</span>
+                        <p>Advocate for policies that protect marine ecosystems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+<!-- Action Items -->
+<div class="row">
+    <div class="col-md-6 mb-4">
+        <section class="card h-100 shadow-sm">
+            <div class="card-body d-flex flex-column">
+                <h4 class="card-title"> Support Marine Protected Areas (MPAs)</h4>
+                <iframe class="mb-3" width="100%" height="315" src="https://www.youtube.com/embed/Zwjf3Qavvac" title="Philippine Marine Protected Areas: Safeguarding Ocean Biodiversity" frameborder="0" allowfullscreen></iframe>
+                <p class="mt-2"><small><strong>Credit:</strong> Philippine Marine Protected Areas: Safeguarding Ocean Biodiversity! #animal2024 by <em>CuteAnimal_JC</em></small></p>
+                <p class="card-text flex-grow-1">
+                    Marine Protected Areas (MPAs) are crucial for conserving marine ecosystems and biodiversity. By supporting MPAs, you contribute to:
+                    <ul class="custom-list">
+                        <li><i class="fas fa-shield-alt text-success"></i> Protecting essential habitats like coral reefs</li>
+                        <li><i class="fas fa-fish text-info"></i> Enhancing local fisheries</li>
+                        <li><i class="fas fa-paw text-warning"></i> Safeguarding endangered species</li>
+                    </ul>
+                </p>
+                <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#mpaModal">Learn More</button>
+            </div>
+        </section>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <section class="card h-100 shadow-sm">
+            <div class="card-body d-flex flex-column">
+                <h3 class="card-title"> Reduce Plastic Use</h3>
+                <iframe class="mb-3" width="100%" height="315" src="https://www.youtube.com/embed/HQTUWK7CM-Y" title="How We Can Keep Plastics Out of Our Ocean" frameborder="0" allowfullscreen></iframe>
+                <p class="mt-2"><small><strong>Credit:</strong> How We Can Keep Plastics Out of Our Ocean by <em>National Geographic</em></small></p>
+                <p class="card-text flex-grow-1">
+                    Reducing plastic use is crucial for protecting our oceans and preserving marine life. You can contribute to this effort by:
+                    <ul class="custom-list">
+                        <li><i class="fas fa-shopping-bag text-primary"></i> Using reusable bags and bottles</li>
+                        <li><i class="fas fa-box-open text-danger"></i> Choosing products with minimal packaging</li>
+                        <li><i class="fas fa-thumbs-up text-info"></i> Supporting plastic-free initiatives</li>
+                        <li><i class="fas fa-seedling text-success"></i> Planting trees and native vegetation</li>
+                    </ul>                    
+                </p>
+                <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#plasticModal">Learn More</button>
+            </div>
+        </section>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <section class="card h-100 shadow-sm">
+            <div class="card-body d-flex flex-column">
+                <h3 class="card-title"></i> Participate in Clean-Up Efforts</h3>
+                <iframe class="mb-3" width="100%" height="315" src="https://www.youtube.com/embed/bIBeCAxfK2A" title="We Cleaned Up the Ocean Floor to Save Corals" frameborder="0" allowfullscreen></iframe>
+                <p class="mt-2"><small><strong>Credit:</strong> We Cleaned Up the Ocean Floor to Save Corals by <em>Planet Wild</em></small></p>
+                <p class="card-text flex-grow-1">
+                    Join or organize clean-up events to protect marine ecosystems:
+                    <ul class="custom-list">
+                        <li><i class="fas fa-hand-sparkles text-primary"></i> Participate in local beach and river clean-ups</li>
+                        <li><i class="fas fa-users text-success"></i> Organize your own clean-up event</li>
+                        <li><i class="fas fa-bullhorn text-danger"></i> Educate others about the importance of clean waterways</li>
+                        <li><i class="fas fa-leaf text-warning"></i> Advocate for policies that protect natural water bodies</li>
+                        <li><i class="fas fa-recycle text-info"></i> Promote recycling initiatives in your community</li>
+                    </ul>
+                </p>
+                <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#cleanupModal">Learn More</button>
+            </div>
+        </section>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <section class="h-100 shadow-sm">
+            <div class="card card-body d-flex flex-column">
+                <h3 class="card-title"> Practice Sustainable Fishing</h3>
+                <iframe class="mb-3" width="100%" height="315" src="https://www.youtube.com/embed/iYXWgWCyYJk?controls=0" title="Ecotipping Point - Saving a Fishery and Coral Reef (Apo Island, Philippines)" frameborder="0" allowfullscreen></iframe>
+                <p class="mt-2"><small><strong>Credit:</strong> How Sustainable Fishing Protects Ocean Biodiversity by <em>Marine Stewardship Council - Sustainable seafood</em></small></p>
+                <p class="card-text flex-grow-1">
+                    Support sustainable fishing practices to protect marine life:
+                    <ul class="custom-list">
+                        <li><i class="fas fa-undo text-success"></i> Practice catch and release</li>
+                        <li><i class="fas fa-tools text-warning"></i> Use appropriate fishing gear</li>
+                        <li><i class="fas fa-book text-danger"></i> Follow local fishing regulations</li>
+                        <li><i class="fas fa-carrot text-primary"></i> Choose sustainably sourced seafood</li>
+                    </ul>
+                </p>
+                <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#fishingModal">Learn More</button>
+            </div>
+        </section>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <section class="card h-100 shadow-sm">
+            <div class="card-body d-flex flex-column">
+                <h3 class="card-title">Advocate for Climate Action</h3>
+                <iframe class="mb-3" width="100%" height="315" src="https://www.youtube.com/embed/2CrkeFERaZo" title="How super corals could help save our reefs" frameborder="0" allowfullscreen></iframe>
+                    <p class="mt-2"><small><strong>Credit:</strong> How super corals could help save our reefs by <em>DW Planet A</em></small></p>
+                     <p class="card-text flex-grow-1">
+                    Support policies and initiatives to combat climate change:
+                    <ul class="custom-list">
+                        <li><i class="fas fa-file-signature text-primary"></i> Promote legislation to reduce carbon emissions</li>
+                        <li><i class="fas fa-solar-panel text-warning"></i> Support clean energy projects</li>
+                        <li><i class="fas fa-comments text-info"></i> Engage in local and global climate conversations</li>
+                        <li><i class="fas fa-chalkboard-teacher text-danger"></i> Educate others about climate change impacts</li>
+                    </ul>
+                </p>
+                <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#climateModal">Learn More</button>
+            </div>
+        </section>
+    </div>
+</div>
+    </main>
+
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <p>&copy; 2024 Coral Reef Degradation Awareness Project | All Rights Reserved.</p>
+    </footer>
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> <!-- Use bundle for Bootstrap 5 to include Popper.js -->
+
+<!-- AOS JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<!-- Custom JS -->
+<script src="script.js"></script>
+<script>
+    // Initialize AOS
+    AOS.init({
+        duration: 1000,
+        once: true,
+    });
+
+    // Load modals dynamically
+    fetch('modals.html')
+      .then(response => response.text())
+      .then(data => {
+        document.body.insertAdjacentHTML('beforeend', data);
+      });
+</script>
+</body>
+</html>
+
