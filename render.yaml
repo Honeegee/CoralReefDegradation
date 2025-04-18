@@ -1,0 +1,7 @@
+gittservices:
+  - type: web
+    name: CoralReefDegradation
+    env: static
+    buildCommand: ""
+    staticPublishPath: .
+    branch: master
